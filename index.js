@@ -13,6 +13,8 @@ const bookstoreServer = express()
 bookstoreServer.use(express.json())
 
 bookstoreServer.use(router)
+
+require('./config/db')
 // create port
 const PORT = 3000
 
