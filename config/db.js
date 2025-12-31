@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const connectionString = process.env.ATLASDBCONNECTION
 
-mongoose.connect(connectionString)
-    .then(res => console.log('MongoDB connection successful'))
-    .catch(err => console.log('DB connection failed', err));
+// console.log(connectionString);
+
+mongoose.connect(connectionString).then(res => console.log('MongoDB connection successful')).catch(err => console.log('DB connection failed', err));
 

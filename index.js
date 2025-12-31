@@ -6,15 +6,20 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const router = require('./routes/routing')
+require('./config/db')
 
 // create server using server
 const bookstoreServer = express()
 
+bookstoreServer.use(cors())
+
 bookstoreServer.use(express.json())
 
 bookstoreServer.use(router)
+// enable static files
+bookstoreServer.use('/uploads', express.static('./uploads'))
 
-require('./config/db')
+
 // create port
 const PORT = 3000
 
